@@ -21,18 +21,19 @@ The read values are automatically labeled with an appropriate name.
 
 The following options exist so far:
 
--b <hexnumber> : Assume a binary base address (default: 0)
--L <labelfile> : Use the specified file for guessing labels (format below)
--l <hexnumber> : Length of code to disassemble (default: entire file)
--s <hexnumber> : Start disassembly at given offset (relative to base address)
--v <hexnumber> : Assume vector table at given address
--c <cpunumber> : numeric CPU number
-		 valid are 6809, 8085, 68000/10/20/30/40/60
+	-b <hexnumber> : Assume a binary base address (default: 0)
+	-L <labelfile> : Use the specified file for guessing labels (format below)
+	-l <hexnumber> : Length of code to disassemble (default: entire file)
+	-s <hexnumber> : Start disassembly at given offset (relative to base address)
+	-v <hexnumber> : Assume vector table at given address
+	-c <cpunumber> : numeric CPU number
+					 valid are 6809, 8085, 68000/10/20/30/40/60
 
 Note: The 8085-output is currently in Z80-Opcodes.
 
 Example Usage:
-redis -b c00000  -L test.labels -v 0 test.bin
+
+	redis -b c00000  -L test.labels -v 0 test.bin
 
 Label file format
 -----------------
@@ -88,14 +89,18 @@ size. This table is again located between $c00000 and $c0003f. So the entry
 would read like that:
 
 	p $c00000 $c0003f d,b,b,s
+
 or
+
 	p $c00000 $c0003f d,b2,s
 
 The latter example would force the two bytes to be written into one DC.B
 line.
 
 	my_label_name equ $hexnumber		for program labels
+
 or
+
 	my_label_name seg $start,$end,X#	for data labels
 
 	where X can be either b(yte), w(ord), l(ong), t(ext) or s(tring)
@@ -105,12 +110,14 @@ or
 
 A ";" signals a comment, the rest of the line is ignored.
 
-INSTALL:
+INSTALL
+-------
 
 Simply type "make". It should compile fine on Linux ...
 
-CAUTION: 
+CAUTION 
+--------
 
-This program is (as usual) a quick hack and is not extensively tested to
+This program is a somewhat quick hack and is not extensively tested to
 produce correct disassembly. Use at your own risk.
 
