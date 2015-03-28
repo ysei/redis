@@ -1,0 +1,15 @@
+Known issues
+------------
+
+Currently, the label file parsing seems somewhat borked. 
+
+This is particularly the case for the more complex data structures, but on certain occasions just adding a comment label might lead to neverending output loops.
+
+
+Vaguely planned, but don't hold your breath
+-------------------------------------------
+
+- achieve full compatibility with "The Macro Assembler AS" by Alfred Arnold (http://john.ccac.rwth-aachen.de:8000/as/)
+- support for 6502 (as there seems to be no proper 6502 disassembler out there anymore)
+- auto-assembly starting with the various CPU vectors to automatically determine code and data segments
+- call-tree generation

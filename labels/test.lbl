@@ -1,0 +1,11 @@
+# comment
+
+c linecomm
+cl "another line comm" 0x2000
+l memlab 0x2000
+v wrongvec 0x3000
+l armlab 0x2000
+n numbers 0x4000 0x5000 4
+v vectors 0x3000 0x4000 4 0 t
+p pattrn 0x5000 0x6000 ((n 2)3,t 4,v 4 0x2000 s0)2
+
