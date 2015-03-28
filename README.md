@@ -11,14 +11,13 @@
 This is a small tool for disassembling 68k, 8085 and 6809 binaries. From the
 68k family it currently supports the 68000 only.
 
-It has an extension to read a separate label file, supplying labels for
-addresses, constants, or complex data fields. Whenever the address is
+It features an extension for reading a separate label file, supplying labels 
+for addresses, constants, or complex data fields. Whenever the address is
 encountered in a jump or a absolute/PC-relative addressing mode, it is
 replaced by the defined label. The same applies for immediate data moves.
 
-It is possible to specify the start address of the vector table
-(usually 0). The read values are automatically labeled with an appropriate
-name.
+It is possible to specify the start address of the vector table (on 68k usually 0). 
+The read values are automatically labeled with an appropriate name.
 
 The following options exist so far:
 
